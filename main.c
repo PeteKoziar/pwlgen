@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 	int last_state    = 0;
 	int current_state = 0;
 
-    /* TODO: Enter code here */
+	// Parse the input arguments:
 	if(argc < 3) {
 		HelpMessage();
 		return 0;
@@ -198,8 +198,11 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
+	fprintf(out_file, "* Digital signals for %s\n", in_file_name);
+	fprintf(out_file, "* Clock width = %dns, rise time = %dns, fall time = %dns\n", clock_width, rise_time, fall_time);
+
 	// Output the clock definition: Vname N+ N- PULSE(Vo V1 Td Tr Tf Tw To)
-	fprintf(out_file, "V1 clk 0 PULSE(0 %4.2f %dn %dn %dn %dn %dn)\n", vdd, invert_clock? clock_width / 2 - rise_time : 0, rise_time, fall_time, clock_width / 2 - rise_time, clock_width);
+	fprintf(out_file, "V1 clk 0 PULSE(0 %4.2f %dn %dn %dn %dn %dn)\n", vdd, invert_clock? clock_width / 2 : 0, rise_time, fall_time, clock_width / 2 - rise_time, clock_width);
 
 	// Output the PWL format:
 	for(signal_index = 0; signal_index != signal_count; signal_index++) {
@@ -221,6 +224,8 @@ int main(int argc, char *argv[])
 		fprintf(out_file, ")\n");
 
 	}
+	fprintf(out_file, ".END\n");
+	fclose(out_file);
     return 0;
 }
 
