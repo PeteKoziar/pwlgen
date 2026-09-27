@@ -62,7 +62,7 @@ The output is:
 
 ## Author
 
-Pete Koziar <https://www.petekoziar.com>
+Pete Koziar <https://www.petekoziar.com>  
 Retired firmware engineer, also the author of 3 science fiction novels:
 
 * *Dauntless Homecoming* (<https://www.amazon.com/Dauntless-Homecoming-Pete-Koziar/dp/1453637958/>),
