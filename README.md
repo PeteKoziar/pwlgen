@@ -9,7 +9,7 @@ It was compiled in Windows using Pelles C (https://pellesc.se/) a free C compile
 
 ## Invocation
 
-    pwlgen in-file out-file \[options\]
+    pwlgen in-file out-file [options]
 
 Where the optional options are:
 
@@ -62,8 +62,8 @@ The output is:
 
 ## Author
 
-Pete Koziar
-(retired firmware engineer, also the author of 3 science fiction novels:
+Pete Koziar <https://www.petekoziar.com>
+Retired firmware engineer, also the author of 3 science fiction novels:
 
 * *Dauntless Homecoming* (<https://www.amazon.com/Dauntless-Homecoming-Pete-Koziar/dp/1453637958/>),
 * *Seeking Adam* (<https://www.amazon.com/Seeking-Adam-Book-Galactic-Redemption/dp/1475227388/>)
