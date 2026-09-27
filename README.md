@@ -9,17 +9,23 @@ It was compiled in Windows using Pelles C (https://pellesc.se/) a free C compile
 
 ## Invocation
 
-pwlgen in-file out-file options
+    pwlgen in-file out-file \[options\]
 
+Where the optional options are:
 
+* \-i              Invert clock edge. Default is signals change on positive edge.
+* \-v value        The (floating point) value for the voltage in a logic 1.
+* \-c nsec         The **clock width** in (integer) nanoseconds.
+* \-r nsec         The **rise time** in (integer) nanoseconds - applies to both clock and data.
+* \-f nsec         The **fall time** in (integer) nanoseconds - applies to both clock and data.
+* \-h              Prints a help message and quite immediately - all other options and files are ignored.
 
 ## File format
 
-A number sign (\#) in the first character of the line indicates a comment.
-
-Spaces are ignored.
-
-The first line that is not a comment must be a comma delimited list of signal names.
+* The first line that is not a comment must be a comma delimited list of signal names. The order of the signals defines the order of the columns.
+* Each line in the input file corresponds to the state of the signals, in order, on that clock edge. Each line must define the state of every signal, there is no default state.
+* A number sign (\#) in the first character of the line indicates a comment.
+* Spaces are ignored. Put in as many or as little as you want to make the input file easier to read.
 
 Here is an example of a file with 8 data lines, reset (rst_bar), write (wr) and lookup (lu).
 
