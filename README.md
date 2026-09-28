@@ -11,14 +11,16 @@ It was compiled in Windows using Pelles C (https://pellesc.se/) a free C compile
 
     pwlgen in-file out-file [options]
 
-Where the optional options are:
+Where the options are (if present):
 
-* \-i              Invert clock edge. Default is signals change on positive edge.
-* \-v value        The (floating point) value for the voltage in a logic 1.
-* \-c nsec         The **clock width** in (integer) nanoseconds.
-* \-r nsec         The **rise time** in (integer) nanoseconds - applies to both clock and data.
-* \-f nsec         The **fall time** in (integer) nanoseconds - applies to both clock and data.
-* \-h              Prints a help message and quite immediately - all other options and files are ignored.
+|Option|Units|Type|Description|Default|
+|------|-----|----|-----------|-------|
+|\-i   | N/A | N/A| Invert clock edge| Change on rising edge|
+|\-v   | volts | Float | Logic 1 voltage| 1.8|
+|\-c   | nsec | Int | Clock width | 50 |
+|\-r   | nsec | Int | Rise time (clock and data)  | 5|
+|\-f   | nsec | Int | Fall time (clock and data) |5|
+|\-h  | N/A | N/A | Help message (exits immediately)||
 
 ## File format
 
