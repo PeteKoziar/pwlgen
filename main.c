@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
 	int fall_time     = DEFAULT_FALL;
 	bool invert_clock = false;
 	int time          = 0;
-	int current_level = 0;
 	float vdd         = 1.8;
 	int last_state    = 0;
 	int current_state = 0;
