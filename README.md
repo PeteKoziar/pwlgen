@@ -5,7 +5,7 @@ Generate spice PWL statements from a table of digital values
 
 It's as plain vanilla as it can be, straight C using the standard C libraries, command line driven.
 
-It was compiled in Windows using Pelles C (https://pellesc.se/) a free C compiler. It should be able to be compiled under Linux using gcc.
+It was compiled in Windows using Pelles C (https://pellesc.se/) a free C compiler. It compiles and runs under Linux using gcc with a make command.
 
 ## Invocation
 
