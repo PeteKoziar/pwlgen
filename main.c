@@ -202,11 +202,11 @@ int main(int argc, char *argv[])
 	fprintf(out_file, "* Clock width = %dns, rise time = %dns, fall time = %dns\n", clock_width, rise_time, fall_time);
 
 	// Output the clock definition: Vname N+ N- PULSE(Vo V1 Td Tr Tf Tw To)
-	fprintf(out_file, "V1 clk 0 PULSE(0 %4.2f %dn %dn %dn %dn %dn)\n", vdd, invert_clock? clock_width / 2 : 0, rise_time, fall_time, clock_width / 2 - rise_time, clock_width);
+	fprintf(out_file, "Vclk clk 0 PULSE(0 %4.2f %dn %dn %dn %dn %dn)\n", vdd, invert_clock? clock_width / 2 : 0, rise_time, fall_time, clock_width / 2 - rise_time, clock_width);
 
 	// Output the PWL format:
 	for(signal_index = 0; signal_index != signal_count; signal_index++) {
-		fprintf(out_file, "V%d %s 0 PWL(", signal_index+2, signal_names[signal_index]);
+		fprintf(out_file, "V_%s %s 0 PWL(", signal_names[signal_index], signal_names[signal_index]);
 		time = clock_width;
 		last_state = signal_matrix[0][signal_index];
 		fprintf(out_file, "0n %4.2f", last_state ? vdd:0.);
